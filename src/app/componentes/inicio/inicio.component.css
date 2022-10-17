@@ -1,0 +1,15 @@
+.btn-outline-violeta {
+    color: #850dfd;
+    border-color: #850dfd;
+    text-transform: uppercase;
+}
+
+.btn-outline-violeta:hover{
+    background-color: #850dfd;
+    color: white;
+    text-transform: uppercase;
+}
+
+.container{
+    padding: 18%;
+}

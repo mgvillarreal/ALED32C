@@ -9,46 +9,51 @@
             <div class="row justify-content-center">
                 <div class="col-md-6 col-lg-4">
                     <div class="login-wrap p-0">
-                        <h3 class="mb-4 text-center">¿No tienes una cuenta?</h3>
 
-                        <form action="#" class="signin-form">
+                        <div *ngIf="parteForm==0">
 
-                            <div class="form-group">
-                                <input type="text" class="form-control" placeholder="Correo electrónico" required>
+                            <h3 class="mb-4 text-center">¿No tienes una cuenta?</h3>
+
+                            <form [formGroup]="forma" action="#" class="signin-form">
+
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" placeholder="Correo electrónico" required formControlName="email">
+                                </div>
+                                <div class="form-group">
+                                    <input id="password-field" type="password" class="form-control" placeholder="Contraseña" required formControlName="contrasena">
+                                    <span toggle="#password-field"></span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn submit px-3" (click)="registrarConEmailyContrasena()">Registrar</button>
+                                </div>
+                            
+                            </form>
+    
+                            <p class="w-100 text-center">&mdash; O ingresa con &mdash;</p>
+    
+                            <div class="text-center">
+                                <button href="#" class="px-2 py-2 mr-md-1 btn text-center" (click)="registrarConGoogle()">
+                                    <!-- <img src="src\assets\img\google.png"> -->
+                                    Google
+                                </button>
                             </div>
-                            <div class="form-group">
-                                <input id="password-field" type="password" class="form-control" placeholder="Contraseña" required>
-                                <span toggle="#password-field"></span>
-                            </div>
-                            <div class="form-group">
-                                <button type="submit" class="form-control btn submit px-3">Registrar</button>
-                            </div>
-                        
-                        </form>
 
-                        <p class="w-100 text-center">&mdash; O ingresa con &mdash;</p>
-
-                        <div class="text-center">
-                            <button href="#" class="px-2 py-2 mr-md-1 btn text-center" (click)="registrarConGoogle()">
-                                <!-- <img src="src\assets\img\google.png"> -->
-                                Google
-                            </button>
                         </div>
 
-                        <ng-template>
+                        <div *ngIf="parteForm==1">
 
                             <h3 class="mb-4 text-center">Ingresa tus datos</h3>
 
                             <form action="#" class="signin-form">
 
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nombre" required>
+                                    <input type="text" class="form-control" placeholder="Nombre" required formControlName="nombre">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Apellido" required>
+                                    <input type="text" class="form-control" placeholder="Apellido" required formControlName="apellido">
                                 </div>
                                 <div class="form-group">
-                                    <input type="text" class="form-control" placeholder="Nickname" required>
+                                    <input type="text" class="form-control" placeholder="Nickname" required formControlName="nickname">
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="form-control btn submit px-3">Registrar</button>
@@ -56,7 +61,7 @@
                             
                             </form>
 
-                        </ng-template>
+                        </div>
 
                     </div>
                 </div>

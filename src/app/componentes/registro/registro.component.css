@@ -28,7 +28,7 @@
     background: transparent;
     border: none;
     height: 50px;
-    color: white !important;
+    color: rgba(255, 255, 255, 0.08);
     border: 1px solid transparent;
     background: rgba(255, 255, 255, 0.08);
     border-radius: 40px;

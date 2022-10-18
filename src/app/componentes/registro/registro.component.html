@@ -12,9 +12,7 @@
 
                         <div *ngIf="parteForm==0">
 
-                            <h3 class="mb-4 text-center">¿No tienes una cuenta?</h3>
-
-                            <form [formGroup]="forma" action="#" class="signin-form">
+                            <form [formGroup]="forma" class="signin-form">
 
                                 <div class="form-group">
                                     <input type="text" name="email" class="form-control" placeholder="Correo electrónico" required formControlName="email">
@@ -29,13 +27,18 @@
                             
                             </form>
     
-                            <p class="w-100 text-center">&mdash; O ingresa con &mdash;</p>
+                            <p class="w-100 text-center">&mdash; O registrate con &mdash;</p>
     
                             <div class="text-center">
                                 <button href="#" class="px-2 py-2 mr-md-1 btn text-center" (click)="registrarConGoogle()">
-                                    <!-- <img src="src\assets\img\google.png"> -->
-                                    Google
+                                    <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png" width="30" height="30">
+                                    
                                 </button>
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <span> Ya tienes una cuenta? </span>
+                                <a routerLink="/ingreso"> Ingresa acá </a>
                             </div>
 
                         </div>

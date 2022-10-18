@@ -14,12 +14,14 @@ import { InicioComponent } from './componentes/inicio/inicio.component';
 import { RegistroComponent } from './componentes/registro/registro.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { IngresoComponent } from './componentes/ingreso/ingreso.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     InicioComponent,
-    RegistroComponent
+    RegistroComponent,
+    IngresoComponent
   ],
   imports: [
     BrowserModule,

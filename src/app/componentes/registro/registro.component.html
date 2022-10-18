@@ -44,7 +44,7 @@
 
                             <h3 class="mb-4 text-center">Ingresa tus datos</h3>
 
-                            <form action="#" class="signin-form">
+                            <form [formGroup]="forma" class="signin-form">
 
                                 <div class="form-group">
                                     <input type="text" class="form-control" placeholder="Nombre" required formControlName="nombre">
@@ -56,7 +56,7 @@
                                     <input type="text" class="form-control" placeholder="Nickname" required formControlName="nickname">
                                 </div>
                                 <div class="form-group">
-                                    <button type="submit" class="form-control btn submit px-3">Registrar</button>
+                                    <button type="submit" class="form-control btn submit px-3" (click)="guardaUsuario()">Guardar</button>
                                 </div>
                             
                             </form>

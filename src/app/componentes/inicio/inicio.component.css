@@ -1,15 +1,15 @@
-.btn-outline-violeta {
-    color: #850dfd;
-    border-color: #850dfd;
-    text-transform: uppercase;
+.carousel-item {
+    height: 100vh;
+    min-height: 350px;
+    background: no-repeat center center scroll;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
 }
 
-.btn-outline-violeta:hover{
-    background-color: #850dfd;
-    color: white;
-    text-transform: uppercase;
-}
-
-.container{
-    padding: 18%;
+.conFondo{
+    background-image: url('src\assets\img\bg.jpg');
+    background-size: cover;
+    padding-bottom: 6.8rem;
 }

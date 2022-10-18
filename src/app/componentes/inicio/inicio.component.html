@@ -1,9 +1,41 @@
-<div class="container text-center">
-    <div>
-        <button type="button" class="btn btn-outline-violeta mb-4" routerLink="/registro">Registro</button>
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Inicio</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item active">
+            <a class="nav-link" routerLink="/ingreso">Ingresar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/registro">Registro</a>
+          </li>
+        </ul>
+      </div>
     </div>
-
-    <div>
-        <button type="button" class="btn btn-outline-violeta mt-4">Chat</button>
+  </nav>
+  
+  <header>
+  
+    <div id="carouselExampleCaptions" class="carousel slide" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active conFondo">
+          <div class="carousel-caption">
+            <h5>The first line of Lorem Ipsum</h5>
+            <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+          </div>
+        </div>
+      </div>
     </div>
-</div>
+  </header>
+  
+  <!-- Page Content -->
+  <section class="py-5">
+    <div class="container">
+      <h1 class="fw-light">Neque porro quisquam est qui dolorem ipsum</h1>
+      <p class="lead">Ut vulputate justo eget eros tempus, sit amet pellentesque purus congue. Nunc dictum suscipit nibh id vestibulum. Sed et massa tristique, convallis velit.</p>
+    </div>
+  </section>

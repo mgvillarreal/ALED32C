@@ -16,6 +16,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { IngresoComponent } from './componentes/ingreso/ingreso.component';
 import { ChatComponent } from './componentes/chat/chat.component';
+import { TopmenuComponent } from './componentes/topmenu/topmenu.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { ChatComponent } from './componentes/chat/chat.component';
     InicioComponent,
     RegistroComponent,
     IngresoComponent,
-    ChatComponent
+    ChatComponent,
+    TopmenuComponent
   ],
   imports: [
     BrowserModule,

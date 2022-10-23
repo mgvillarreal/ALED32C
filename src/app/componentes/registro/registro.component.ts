@@ -18,8 +18,6 @@ export class RegistroComponent implements OnInit {
   miUsuario = new Usuario;
   public forma: FormGroup; 
 
-  error:string;
-
   constructor(private router: Router, private fb: FormBuilder, private authFirebaseService: AuthFirebaseService, private usuarioService: UsuarioApiService ) { }
 
   ngOnInit(): void {
@@ -33,12 +31,11 @@ export class RegistroComponent implements OnInit {
   }
 
   registrarConGoogle(){
-    // this.authFirebaseService.signUp().then(res =>{
-    //   //this.router.navigate(['bienvenida']);
-    //   this.parteForm = 1;
-    //   localStorage.setItem('usuario',String(res.user.email));
-    //     this.error = 'Error en registro con Google';
-    // });
+    this.authFirebaseService.signUp().then(res =>{
+      this.parteForm = 1;
+      //localStorage.setItem('usuario',String(res.user.email));
+      this.miUsuario.email = String(res.user.email);
+    });
     this.parteForm = 1;
   }
 
@@ -48,21 +45,19 @@ export class RegistroComponent implements OnInit {
 
     this.parteForm = 1;
 
-    // this.authFirebaseService.signUpEmailPwd(this.miUsuario.email, this.miUsuario.contrasena).then(res =>{
-    //   this.parteForm = 1;
-    //   localStorage.setItem('usuario',String(res.user.email));
-    //   this.error = 'Error en registro con Email y Contraseña';
-    // })
+    this.authFirebaseService.signUpEmailPwd(this.miUsuario.email, this.miUsuario.contrasena).then(res =>{
+      this.parteForm = 1;
+      localStorage.setItem('usuario',String(res.user.email));
+    })
   }
 
   guardaUsuario(){
     this.miUsuario.nombre = this.forma.value['nombre'];
     this.miUsuario.apellido = this.forma.value['apellido'];
     this.miUsuario.nickname = this.forma.value['nickname'];
-    console.info("Usuario a guardar", this.miUsuario);
 
     this.usuarioService.guardarUsuario(this.forma.value).subscribe(res=>{
-      console.log("respuesta", res);
+      console.log("Respuesta guarda usuario: ", res);
     })
   }
 

@@ -30,7 +30,7 @@ export class IngresoComponent implements OnInit {
   ingresarConEmailyContrasena(){
     this.miUsuario.email = this.forma.value['email'];
     this.miUsuario.contrasena = this.forma.value['contrasena'];
-    console.log('Inbgreso: ', this.miUsuario);
+    console.log('Ingreso: ', this.miUsuario);
 
     this.authFirebaseService.signInEmailPwd(this.miUsuario.email, this.miUsuario.contrasena);
 
@@ -41,6 +41,8 @@ export class IngresoComponent implements OnInit {
     }
     
     this.usuarioService.traerDatosUsuario(this.miUsuario.email);
+
+    this.router.navigate(['chat']);
   }
 
 }

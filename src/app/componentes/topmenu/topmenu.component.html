@@ -18,8 +18,19 @@
       </div>
 
       <div class="d-flex" *ngIf="nicknameUsuario!=''">
-        <div class="nickname mr-3">{{nicknameUsuario}}</div>
-        <span (click)="desloguear()">
+        <div class="action-button icono mr-3" routerLink="/perfil">{{nicknameUsuario}}</div>
+        
+        <span class="icono ml-3" routerLink="/chat">
+          <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-message-circle" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="#fbceb5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+            <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+            <path d="M3 20l1.3 -3.9a9 8 0 1 1 3.4 2.9l-4.7 1" />
+            <line x1="12" y1="12" x2="12" y2="12.01" />
+            <line x1="8" y1="12" x2="8" y2="12.01" />
+            <line x1="16" y1="12" x2="16" y2="12.01" />
+          </svg>
+        </span>
+
+        <span class="icono" (click)="desloguear()">
           <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-door-exit" width="20" height="20" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fbceb5" fill="none" stroke-linecap="round" stroke-linejoin="round">
             <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
             <path d="M13 12v.01" />
@@ -28,6 +39,7 @@
             <path d="M14 7h7m-3 -3l3 3l-3 3" />
           </svg>
         </span>
+        
       </div>
 
     </div>

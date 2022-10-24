@@ -23,7 +23,11 @@ export class UsuarioApiService {
       localStorage.setItem("usuarioChat",JSON.stringify(res));
       console.log('res: ', res);
     });
+  }
 
+  actualizaDatosUsuario(datosUsuario: any){
+    console.log("datos service: ", datosUsuario);
+    return this.http.post(this.url + 'modificacion', datosUsuario);
   }
   
 

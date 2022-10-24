@@ -11,8 +11,11 @@ export class TopmenuComponent implements OnInit {
   nicknameUsuario: string = '';
 
   constructor(private router: Router) {
-    let datosUsuario = JSON.parse(localStorage.getItem('usuarioChat'));
-    this.nicknameUsuario = datosUsuario[0]['usu_nickname'];
+    if(localStorage.getItem('usuarioChat').length > 2){
+      let datosUsuario = JSON.parse(localStorage.getItem('usuarioChat'));
+      this.nicknameUsuario = datosUsuario[0]['usu_nickname'];
+    }
+    
   }
 
   ngOnInit(): void {

@@ -1,5 +1,17 @@
-.nickname{
-    border-radius: 25px;
-    border-color: #BE9D9D;
+.icono{
+    cursor: pointer;
+}
+
+.action-button, .action-button:not(.disabled):active {
+    border:1px solid #adb5bd;
+    border-radius:40px;
+    color:#BE9D9D;
     text-transform: uppercase;
+    box-shadow:none;
+    text-shadow:none;
+    padding:.1rem .6rem;
+    background:transparent;
+    transition:background-color 0.25s;
+    outline:none;
+    margin-right: 5px;
 }

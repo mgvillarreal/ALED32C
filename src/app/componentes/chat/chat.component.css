@@ -1,3 +1,9 @@
+.contenedor{
+    background-image: url('src\assets\img\bg.jpg');
+    background-size: cover;
+    padding-bottom: 6.8rem;
+}
+
 .card-bordered {
     border: 1px solid #ebebeb;
 }
@@ -67,12 +73,10 @@ h4.card-title {
     padding: 2px 8px;
     line-height: 18px;
 }
+
 .btn-xs:hover{
     color:#fff !important;
 }
-
-
-
 
 .card-title {
     font-family: Roboto,sans-serif;
@@ -214,7 +218,7 @@ h4.card-title {
 .media-chat.media-chat-reverse .media-body p {
     float: right;
     clear: right;
-    background-color: #48b0f7;
+    background-color: #fbceb5;
     color: #fff;
 }
 
@@ -301,5 +305,9 @@ button, input, optgroup, select, textarea {
 }
 
 .text-info {
-    color: #48b0f7 !important;
+    color: #fbceb5 !important;
+}
+
+.page-content{
+    padding-top: 2rem!important;
 }

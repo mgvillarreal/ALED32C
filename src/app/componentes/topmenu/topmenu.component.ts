@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-topmenu',
@@ -9,12 +10,20 @@ export class TopmenuComponent implements OnInit {
 
   nicknameUsuario: string = '';
 
-  constructor() {
+  constructor(private router: Router) {
     let datosUsuario = JSON.parse(localStorage.getItem('usuarioChat'));
     this.nicknameUsuario = datosUsuario[0]['usu_nickname'];
   }
 
   ngOnInit(): void {
+  }
+
+  desloguear(){
+    let arrayUsuario = [];
+    arrayUsuario.pop();
+    localStorage.setItem("usuarioChat", JSON.stringify(arrayUsuario));
+    this.nicknameUsuario = '';
+    this.router.navigate(['inicio']);
   }
 
 }

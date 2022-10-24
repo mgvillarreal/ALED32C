@@ -9,6 +9,8 @@ import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 })
 export class AuthFirebaseService {
 
+  error: string;
+
   constructor(private route: Router, private AuthFirestore: AngularFireAuth) { }
 
   async signUp() {
@@ -29,6 +31,22 @@ export class AuthFirebaseService {
       console.log('Error en registro con Email y Contraseña', error);
       return null;
     }
+  }
+
+  signInEmailPwd(email, password){
+    const auth = getAuth();
+
+    this.AuthFirestore.signInWithEmailAndPassword(email, password)
+      .then((userCredential) => {
+        // Signed in
+        const user = userCredential.user;
+        console.log('Credenciales correctas, ¡bienvenido!');
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        this.error = error.message;
+      });
   }
   
 }

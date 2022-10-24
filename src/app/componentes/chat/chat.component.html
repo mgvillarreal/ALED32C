@@ -1,54 +1,99 @@
-<div *ngIf="mailLogeado && !mostrarChat" class="chatIconContenedor" (click)="mostrarChat=true">
-    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-messages chatIcon" width="56" height="56" viewBox="0 0 24 24" stroke-width="2" stroke="#184e8e" fill="none" stroke-linecap="round" stroke-linejoin="round">
-        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-        <path d="M21 14l-3 -3h-7a1 1 0 0 1 -1 -1v-6a1 1 0 0 1 1 -1h9a1 1 0 0 1 1 1v10" />
-        <path d="M14 15v2a1 1 0 0 1 -1 1h-7l-3 3v-10a1 1 0 0 1 1 -1h2" />
-    </svg>
-</div>
-
-
-<div class="card text-center cardContainer" *ngIf="mailLogeado && mostrarChat">
-    <div class="card-header">
-        CHAT
-        <div class="closeIcon" (click)="mostrarChat=false">x</div>
-    </div>
-
-    <!-- <div id="contenedorMensajes" class="card-body contenedor-mensajes">
-      <div class="h-100">
-        <p *ngFor="let mensaje of listaMensajes" class="msj p-2"
-         [ngClass]="(mailLogeado==mensaje.emisor)? 'enviado' : 'recibido' "
-        >
-            {{mensaje.descripcion}}
-        </p>
-      </div>
-      <!-- <div class="h-100">
-        <div *ngFor="let item of mensaje" class="msj p-2"
-        [ngClass]="(mailLogeado==mensajeChat.usuario)? 'enviado' : 'recibido' "
-        >
-          {{item.texto}}
-          <div class="textoFecha">
-            {{ item.fecha | date:'short':'+05:00' }}
-          </div>
-        </div>
-      </div> 
-
-    </div>
-
-    <form class="card footer text-muted" (ngSubmit)="enviarMensaje()">
-        <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Mensaje" [(ngModel)]="nuevoMensaje" [ngModelOptions]="{standalone: true}">
-            <div class="input-group-append" (click)="enviarMensaje()">
-              <span class="input-group-text" id="basic-addon2">
-                <div class="btn-enviar">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-send" width="16" height="16" viewBox="0 0 24 24" stroke-width="2.5" stroke="#184e8e" fill="none" stroke-linecap="round" stroke-linejoin="round">
-                        <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
-                        <line x1="10" y1="14" x2="21" y2="3" />
-                        <path d="M21 3l-6.5 18a0.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a0.55 .55 0 0 1 0 -1l18 -6.5" />
-                    </svg>
-                </div>
-              </span>
+<div class="page-content page-container" id="page-content">
+  <div class="padding">
+      <div class="row container d-flex justify-content-center">
+<div class="col-md-6">
+          <div class="card card-bordered">
+            <div class="card-header">
+              <h4 class="card-title"><strong>Chat</strong></h4>
+              <a class="btn btn-xs btn-secondary" href="#" data-abc="true">Let's Chat App</a>
             </div>
-        </div>
-    </form> -->
 
-</div>
+
+            <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height:400px !important;">
+              <div class="media media-chat">
+                <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                <div class="media-body">
+                  <p>Hi</p>
+                  <p>How are you ...???</p>
+                  <p>What are you doing tomorrow?<br> Can we come up a bar?</p>
+                  <p class="meta"><time datetime="2018">23:58</time></p>
+                </div>
+              </div>
+
+              <div class="media media-meta-day">Today</div>
+
+              <div class="media media-chat media-chat-reverse">
+                <div class="media-body">
+                  <p>Hiii, I'm good.</p>
+                  <p>How are you doing?</p>
+                  <p>Long time no see! Tomorrow office. will be free on sunday.</p>
+                  <p class="meta"><time datetime="2018">00:06</time></p>
+                </div>
+              </div>
+
+              <div class="media media-chat">
+                <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                <div class="media-body">
+                  <p>Okay</p>
+                  <p>We will go on sunday? </p>
+                  <p class="meta"><time datetime="2018">00:07</time></p>
+                </div>
+              </div>
+
+              <div class="media media-chat media-chat-reverse">
+                <div class="media-body">
+                  <p>That's awesome!</p>
+                  <p>I will meet you Sandon Square sharp at 10 AM</p>
+                  <p>Is that okay?</p>
+                  <p class="meta"><time datetime="2018">00:09</time></p>
+                </div>
+              </div>
+
+              <div class="media media-chat">
+                <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                <div class="media-body">
+                  <p>Okay i will meet you on Sandon Square </p>
+                  <p class="meta"><time datetime="2018">00:10</time></p>
+                </div>
+              </div>
+
+              <div class="media media-chat media-chat-reverse">
+                <div class="media-body">
+                  <p>Do you have pictures of Matley Marriage?</p>
+                  <p class="meta"><time datetime="2018">00:10</time></p>
+                </div>
+              </div>
+
+              <div class="media media-chat">
+                <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+                <div class="media-body">
+                  <p>Sorry I don't have. i changed my phone.</p>
+                  <p class="meta"><time datetime="2018">00:12</time></p>
+                </div>
+              </div>
+
+              <div class="media media-chat media-chat-reverse">
+                <div class="media-body">
+                  <p>Okay then see you on sunday!!</p>
+                  <p class="meta"><time datetime="2018">00:12</time></p>
+                </div>
+              </div>
+
+            <div class="ps-scrollbar-x-rail" style="left: 0px; bottom: 0px;"><div class="ps-scrollbar-x" tabindex="0" style="left: 0px; width: 0px;"></div></div><div class="ps-scrollbar-y-rail" style="top: 0px; height: 0px; right: 2px;"><div class="ps-scrollbar-y" tabindex="0" style="top: 0px; height: 2px;"></div></div></div>
+
+            <div class="publisher bt-1 border-light">
+              <img class="avatar avatar-xs" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="...">
+              <input class="publisher-input" type="text" placeholder="Write something">
+              <span class="publisher-btn file-group">
+                <i class="fa fa-paperclip file-browser"></i>
+                <input type="file">
+              </span>
+              <a class="publisher-btn" href="#" data-abc="true"><i class="fa fa-smile"></i></a>
+              <a class="publisher-btn text-info" href="#" data-abc="true"><i class="fa fa-paper-plane"></i></a>
+            </div>
+
+           </div>
+        </div>
+        </div>
+        </div>
+        </div>

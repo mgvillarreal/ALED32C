@@ -46,13 +46,13 @@ export class PerfilComponent implements OnInit {
     this.miUsuario.nickname = this.forma.value['nickname'];
     this.miUsuario.email = this.forma.value['email'];
 
-    console.log("entro aca 1");
+    this.usuarioService.actualizaDatosUsuario(this.miUsuario).subscribe(res=>{
+      console.log("respuesta service: ", res);
+      this.usuarioService.traerDatosUsuario(this.miUsuario.email);
+    });
 
-    this.usuarioService.actualizaDatosUsuario(this.miUsuario);
-
-    //this.usuarioService.traerDatosUsuario(this.miUsuario.email);
-
-    this.router.navigate(['perfil']);
+    this.router.navigate(['chat']);
+    
   }
 
 }

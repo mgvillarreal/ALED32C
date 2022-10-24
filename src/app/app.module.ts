@@ -19,6 +19,9 @@ import { ChatComponent } from './componentes/chat/chat.component';
 import { TopmenuComponent } from './componentes/topmenu/topmenu.component';
 import { PerfilComponent } from './componentes/perfil/perfil.component';
 
+import { AnimacionComponent } from './componentes/animacion/animacion.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,7 +30,9 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     IngresoComponent,
     ChatComponent,
     TopmenuComponent,
-    PerfilComponent
+    PerfilComponent,
+
+    AnimacionComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,7 +41,9 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
     ReactiveFormsModule,
     HttpClientModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFirestoreModule    
+    AngularFirestoreModule,
+    
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

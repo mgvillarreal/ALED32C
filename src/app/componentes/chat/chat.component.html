@@ -11,34 +11,15 @@
                 <a class="btn btn-xs btn-secondary" href="#" data-abc="true">x</a>
               </div>
   
-              <div class="ps-container ps-theme-default ps-active-y" id="chat-content" style="overflow-y: scroll !important; height:400px !important;">
-                <div class="media media-chat">
-                  <!-- <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."> -->
-                  <div class="media-body">
-                    <p>Hi</p>
-                    <p>How are you ...???</p>
-                    <p>What are you doing tomorrow?<br> Can we come up a bar?</p>
-                    <p class="meta"><time datetime="2018">23:58</time></p>
-                  </div>
-                </div>
-  
-                <!-- <div class="media media-meta-day">Today</div> -->
-  
-                <div class="media media-chat media-chat-reverse">
-                  <div class="media-body">
-                    <p>Hiii, I'm good.</p>
-                    <p>How are you doing?</p>
-                    <p>Long time no see! Tomorrow office. will be free on sunday.</p>
-                    <p class="meta"><time datetime="2018">00:06</time></p>
-                  </div>
-                </div>
-  
-                <div class="media media-chat">
-                  <!-- <img class="avatar" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."> -->
-                  <div class="media-body">
-                    <p>Okay</p>
-                    <p>We will go on sunday? </p>
-                    <p class="meta"><time datetime="2018">00:07</time></p>
+              <div class="ps-container ps-theme-default ps-active-y" id="contenedorMensajes" style="overflow-y: scroll !important; height:400px !important;">
+                <div class="h-100">
+                  <div *ngFor="let item of mensaje; let i = index" class="p-2" 
+                  [ngClass]="(usuarioLogueado==mensaje[i]['usuario'])? 'enviado' : 'recibido' "
+                  >
+                    {{item.texto}}
+                    <div class="textoFecha">
+                      {{ item.fecha.toDate() | date:'short' }}
+                    </div>
                   </div>
                 </div>
   
@@ -46,19 +27,17 @@
   
               <div class="publisher bt-1 border-light">
                 <!-- <img class="avatar avatar-xs" src="https://img.icons8.com/color/36/000000/administrator-male.png" alt="..."> -->
-                <input class="publisher-input" type="text" placeholder="Mensaje">
-                <span class="publisher-btn file-group">
+                <input class="publisher-input" type="text" placeholder="Mensaje" [(ngModel)]="nuevoMensaje">
+                <!-- <span class="publisher-btn file-group">
                   <i class="fa fa-paperclip file-browser"></i>
                   <input type="file">
-                </span>
-                <a class="publisher-btn" href="#" data-abc="true"><i class="fa fa-smile"></i></a>
-                <a class="publisher-btn text-info" href="#" data-abc="true">
-                  <i class="fa fa-paper-plane">
+                </span> -->
+                <!-- <a class="publisher-btn" href="#" data-abc="true"><i class="fa fa-smile"></i></a> -->
+                <a class="publisher-btn text-info" data-abc="true" (click)="enviarMensaje()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-telegram" width="28" height="28" viewBox="0 0 24 24" stroke-width="2" stroke="#fbceb5" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
                       <path d="M15 10l-4 4l6 6l4 -16l-18 7l4 2l2 6l3 -4" />
                     </svg>
-                  </i>
                 </a>
               </div>
   

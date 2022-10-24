@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Mensaje } from 'src/app/clases/mensaje';
+import { ChatFirebaseService } from 'src/app/servicios/chat-firebase.service';
 
 @Component({
   selector: 'app-chat',
@@ -7,13 +9,67 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ChatComponent implements OnInit {
 
-  /* BANDERAS */
-  mailLogeado: string;
-  mostrarChat = false;
+  mensajeChat = new Mensaje;
+  public mensaje:Array<any> = new Array<any>();
 
-  constructor() { }
+  nuevoMensaje:string = "";
+  usuarioLogueado:string;
+
+  constructor(private firestoreApp: ChatFirebaseService) {
+    firestoreApp.traerColeccion().subscribe(t=>
+      {
+        this.mensaje = [];
+        (<Array<any>>t).forEach(element =>
+          this.mensaje.push(element)
+        )
+        console.log("mensaje: ", this.mensaje);
+      }
+    );
+  }
+
+  enviarMensaje():void{
+
+    //if(this.nuevoMensaje == "" ) return;
+
+    let datosUsuario = JSON.parse(localStorage.getItem('usuarioChat'));
+    this.mensajeChat.usuario = datosUsuario[0]['usu_email'];
+    this.mensajeChat.fecha = new Date;
+    this.mensajeChat.texto = this.nuevoMensaje;
+
+    console.log("mensaje enviado: ", this.mensajeChat);
+
+    this.firestoreApp.setMensaje(JSON.parse(JSON.stringify(this.mensajeChat)));
+
+    this.nuevoMensaje = "";
+
+    setTimeout(() => {
+      //this.scrollHastaUltElementoPorClase();
+    }, 10);
+    
+  }
+
+  scrollHastaUltElementoPorClase():void{
+    let elementos = document.getElementsByClassName('msj');
+    let ultElemento:any = elementos[elementos.length - 1];
+    let topPos = ultElemento.offsetTop;
+
+    //@ts-ignore
+    document.getElementById("contenedorMensajes")?.scrollTop = topPos;
+  }
+
+  obtenerUsuarioLogeado():void{
+
+    if(localStorage.getItem('usuarioChat') !== null){
+      let datosUsuario = JSON.parse(localStorage.getItem('usuarioChat'));
+      this.usuarioLogueado = datosUsuario[0]['usu_email'];
+
+      console.log("mail logueado chat: ", this.usuarioLogueado);
+    }
+  
+  }
 
   ngOnInit(): void {
+    this.obtenerUsuarioLogeado();
   }
 
 }

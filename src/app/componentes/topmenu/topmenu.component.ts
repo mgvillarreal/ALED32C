@@ -7,7 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopmenuComponent implements OnInit {
 
-  constructor() { }
+  nicknameUsuario: string = '';
+
+  constructor() {
+    let datosUsuario = JSON.parse(localStorage.getItem('usuarioChat'));
+    this.nicknameUsuario = datosUsuario[0]['usu_nickname'];
+  }
 
   ngOnInit(): void {
   }

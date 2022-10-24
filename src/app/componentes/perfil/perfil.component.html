@@ -1,0 +1,33 @@
+<div class="contenedor">
+    <div class="titulo-perfil text-center"> Perfil </div>
+
+    <div class="card mx-auto text-center">
+        <div>
+            <span class="nombre-usuario">{{datosUsuario[0]['usu_nombre']}}</span>
+        </div>
+
+        <div class="grid-campos">
+            <div>
+                <span class="titulo-campos">Nombre</span><br>
+                <span>{{datosUsuario[0]['usu_nombre']}}</span>
+            </div>
+            <div>
+                <span class="titulo-campos">Apellido</span><br>
+                <span>{{datosUsuario[0]['usu_apellido']}}</span>
+            </div>
+            <div>
+                <span class="titulo-campos">Nickname</span><br>
+                <span>{{datosUsuario[0]['usu_nickname']}}</span>
+            </div>
+            <div>
+                <span class="titulo-campos">Email</span><br>
+                <span>{{datosUsuario[0]['usu_email']}}</span>
+            </div>
+        </div>
+
+        <div>
+            <button type="button" class="btn btn-outline-primary btn-datos">Editar</button>
+        </div>
+    </div>
+
+</div>

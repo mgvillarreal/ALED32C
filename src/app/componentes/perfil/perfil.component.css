@@ -1,0 +1,73 @@
+.contenedor{
+    background-image: url('src\assets\img\bg.jpg');
+    background-size: cover;
+    padding-bottom: 6.8rem;
+}
+
+.titulo-perfil{
+    font-size: 50px;
+    font-weight: 500;
+    color: white;
+    padding-top: 5rem;
+    margin-bottom: 2rem;
+}
+
+.card{
+    width: 80%;
+    max-width: 800px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 20px 55px 20px 20px;
+
+    margin-top: 7%;
+    margin-bottom: 8.5%;
+  
+    box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -webkit-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -o-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+    -ms-box-shadow: 0 5px 10px 0px rgba(0, 0, 0, 0.1);
+}
+
+.nombre-usuario{
+    margin: 10px auto;
+    font-size: 35px;
+    font-weight: 600;
+    color: #fbceb5;
+}
+
+.grid-campos{
+    margin-top: 15px;
+    margin-left: 30px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 20px;
+}
+
+.btn-datos{
+    border-color:#419f3e;
+    color: #419f3e;
+    font-size: 15px;
+    text-transform: uppercase;
+    border-radius: 25px;
+    margin-top: 15px;
+    margin-left: 670px;
+}
+
+.btn-datos:hover{
+    background-color:#419f3e;
+    color: white;
+}
+
+.grid-botones{
+    margin-top: 15px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.titulo-campos{
+    font-size: 23px;
+    font-weight: 500;
+    color: #433e3c;
+}

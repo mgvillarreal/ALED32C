@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { IngresoComponent } from './componentes/ingreso/ingreso.component';
 import { ChatComponent } from './componentes/chat/chat.component';
 import { TopmenuComponent } from './componentes/topmenu/topmenu.component';
+import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { TopmenuComponent } from './componentes/topmenu/topmenu.component';
     RegistroComponent,
     IngresoComponent,
     ChatComponent,
-    TopmenuComponent
+    TopmenuComponent,
+    PerfilComponent
   ],
   imports: [
     BrowserModule,

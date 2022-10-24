@@ -20,7 +20,7 @@ export class UsuarioApiService {
     }
 
     return this.http.post(this.url + 'datos', data).subscribe(res=>{
-      localStorage.setItem("usuarioChat",res[0]['usu_nickname']);
+      localStorage.setItem("usuarioChat",JSON.stringify(res));
       console.log('res: ', res);
     });
 

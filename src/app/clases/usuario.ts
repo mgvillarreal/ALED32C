@@ -6,4 +6,5 @@ export class Usuario {
     email:string;
     contrasena:string;
     token:string;
+    fnacimiento:string;
 }

@@ -21,8 +21,8 @@
                     <span>{{datosUsuario[0]['usu_nickname']}}</span>
                 </div>
                 <div>
-                    <span class="titulo-campos">Email</span><br>
-                    <span>{{datosUsuario[0]['usu_email']}}</span>
+                    <span class="titulo-campos">Fecha nacimiento</span><br>
+                    <span>{{datosUsuario[0]['usu_fnacimiento']}}</span>
                 </div>
             </div>
 
@@ -60,6 +60,10 @@
                                 <div class="form-group">
                                     <label class="txt-label">Nickname</label>
                                     <input type="text" name="nickname" class="form-control" required formControlName="nickname" [ngModel]="datosUsuario[0]['usu_nickname']">
+                                </div>
+                                <div class="form-group">
+                                    <label class="txt-label">Fecha de Nacimiento</label>
+                                    <input type="date" name="fnacimiento" class="form-control" required formControlName="fnacimiento" [ngModel]="datosUsuario[0]['usu_fnacimiento']">
                                 </div>
                                 <div class="form-group">
                                     <label class="txt-label">Email</label>

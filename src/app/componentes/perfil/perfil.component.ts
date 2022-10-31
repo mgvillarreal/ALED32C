@@ -30,7 +30,8 @@ export class PerfilComponent implements OnInit {
       'nombre': ['', [Validators.required]],
       'apellido': ['', Validators.required],
       'nickname': ['', Validators.required],
-      'email': ['', Validators.required]
+      'email': ['', Validators.required],
+      'fnacimiento': ['', Validators.required]
     })
   }
 
@@ -46,6 +47,7 @@ export class PerfilComponent implements OnInit {
     this.miUsuario.apellido = this.forma.value['apellido'];
     this.miUsuario.nickname = this.forma.value['nickname'];
     this.miUsuario.email = this.forma.value['email'];
+    this.miUsuario.fnacimiento = this.forma.value['fnacimiento'];
 
     this.usuarioService.actualizaDatosUsuario(this.miUsuario).subscribe(res=>{
       console.log("respuesta service: ", res);

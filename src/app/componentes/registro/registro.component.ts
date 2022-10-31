@@ -26,7 +26,8 @@ export class RegistroComponent implements OnInit {
       'contrasena': ['', Validators.required],
       'nombre': ['', Validators.required],
       'apellido': ['', Validators.required],
-      'nickname': ['', Validators.required]
+      'nickname': ['', Validators.required],
+      'fnacimiento': ['', Validators.required]
     })
   }
 
@@ -55,6 +56,9 @@ export class RegistroComponent implements OnInit {
     this.miUsuario.nombre = this.forma.value['nombre'];
     this.miUsuario.apellido = this.forma.value['apellido'];
     this.miUsuario.nickname = this.forma.value['nickname'];
+    this.miUsuario.fnacimiento = this.forma.value['fnacimiento'];
+
+    console.log('Usuario registrado: ', this.miUsuario);
 
     this.usuarioService.guardarUsuario(this.forma.value).subscribe(res=>{
       console.log("Respuesta guarda usuario: ", res);

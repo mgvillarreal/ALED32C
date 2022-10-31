@@ -18,7 +18,8 @@
                   >
                     {{item.texto}}
                     <div class="textoFecha">
-                      {{ item.fecha.toDate() | date:'short' }}
+                      <!-- {{ item.fecha }} -->
+                      {{ item.fecha | date:'dd/MM/yy, h:mm a' }}
                     </div>
                   </div>
                 </div>

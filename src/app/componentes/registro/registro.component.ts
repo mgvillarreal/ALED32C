@@ -59,6 +59,8 @@ export class RegistroComponent implements OnInit {
     this.usuarioService.guardarUsuario(this.forma.value).subscribe(res=>{
       console.log("Respuesta guarda usuario: ", res);
     })
+
+    this.router.navigate(['ingreso']);
   }
 
 }

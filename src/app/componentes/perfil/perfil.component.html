@@ -79,3 +79,29 @@
         </div>
     </div>
 </div>
+
+<div class="contenedor3" *ngIf="mensajeActFlag==1">
+    <div>
+        <div class="titulo-perfil text-center"> Perfil </div>
+
+        <div class="card mx-auto text-center">
+            
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="76" height="76" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fbceb5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M9 12l2 2l4 -4" />
+                </svg>
+            </div>
+
+            <div class="txt-msj">
+                Tus datos han sido actualizados correctamente.
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-outline-primary mt-4" (click)="vuelveaPerfil()">Aceptar</button>
+            </div>
+
+        </div>
+    </div>
+</div>

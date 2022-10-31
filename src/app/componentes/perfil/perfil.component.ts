@@ -14,6 +14,7 @@ export class PerfilComponent implements OnInit {
   /* BANDERAS */
   muestraPerfilFlag = 1;
   formularioPerfilFlag = 0;
+  mensajeActFlag = 0;
 
   datosUsuario: any;
   public forma: FormGroup;
@@ -50,9 +51,17 @@ export class PerfilComponent implements OnInit {
       console.log("respuesta service: ", res);
       this.usuarioService.traerDatosUsuario(this.miUsuario.email);
     });
-
-    this.router.navigate(['chat']);
     
+    this.mensajeActFlag = 1;
+    this.muestraPerfilFlag = 0;
+    this.formularioPerfilFlag = 0;
+
+  }
+
+  vuelveaPerfil(){
+    this.mensajeActFlag = 0;
+    this.muestraPerfilFlag = 1;
+    this.formularioPerfilFlag = 0;
   }
 
 }

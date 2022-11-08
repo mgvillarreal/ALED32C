@@ -7,4 +7,5 @@ export class Usuario {
     contrasena:string;
     token:string;
     fnacimiento:string;
+    edad:number;
 }

@@ -22,7 +22,7 @@ export class PerfilComponent implements OnInit {
 
   constructor(private router: Router, private fb: FormBuilder, private usuarioService: UsuarioApiService) { 
     this.datosUsuario = JSON.parse(localStorage.getItem('usuarioChat'));
-    console.log('datos usuario: ', this.datosUsuario[0]['usu_nombre']);
+    console.log('Datos Usuario: ', this.datosUsuario);
   }
 
   ngOnInit(): void {
@@ -32,7 +32,9 @@ export class PerfilComponent implements OnInit {
       'nickname': ['', Validators.required],
       'email': ['', Validators.required],
       'fnacimiento': ['', Validators.required]
-    })
+    });
+
+    this.calculaEdad();
   }
 
   editaDatos(){
@@ -50,7 +52,7 @@ export class PerfilComponent implements OnInit {
     this.miUsuario.fnacimiento = this.forma.value['fnacimiento'];
 
     this.usuarioService.actualizaDatosUsuario(this.miUsuario).subscribe(res=>{
-      console.log("respuesta service: ", res);
+      console.log("Respuesta Service: ", res);
       this.usuarioService.traerDatosUsuario(this.miUsuario.email);
     });
     
@@ -64,6 +66,12 @@ export class PerfilComponent implements OnInit {
     this.mensajeActFlag = 0;
     this.muestraPerfilFlag = 1;
     this.formularioPerfilFlag = 0;
+  }
+
+  calculaEdad(){
+    let nacimientoDate = new Date(this.datosUsuario[0]['usu_fnacimiento']);
+    let timeDiff = Math.abs(Date.now() - nacimientoDate.getTime());
+    this.miUsuario.edad = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
   }
 
 }

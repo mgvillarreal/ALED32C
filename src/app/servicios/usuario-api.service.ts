@@ -21,12 +21,12 @@ export class UsuarioApiService {
 
     return this.http.post(this.url + 'datos', data).subscribe(res=>{
       localStorage.setItem("usuarioChat",JSON.stringify(res));
-      console.log('res: ', res);
+      console.log('Res Datos Usuario Service: ', res);
     });
   }
 
   actualizaDatosUsuario(datosUsuario: any){
-    console.log("datos service: ", datosUsuario);
+    console.log("Datos Service: ", datosUsuario);
     return this.http.post(this.url + 'modificacion', datosUsuario);
   }
   

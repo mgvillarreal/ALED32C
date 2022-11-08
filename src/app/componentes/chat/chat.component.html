@@ -16,6 +16,7 @@
                   <div *ngFor="let item of mensaje; let i = index" class="p-2" 
                   [ngClass]="(usuarioLogueado==mensaje[i]['usuario'])? 'enviado' : 'recibido' "
                   >
+                    <div class="textoNickname">{{item.nickname}}:</div>
                     {{item.texto}}
                     <div class="textoFecha">
                       <!-- {{ item.fecha }} -->

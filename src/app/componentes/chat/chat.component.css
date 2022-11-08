@@ -341,3 +341,9 @@ button, input, optgroup, select, textarea {
     color:rgb(105, 105, 105);
     font-size: x-small;
 }
+
+.textoNickname{
+    color:rgb(105, 105, 105);
+    font-weight: bold;
+    font-size: small;
+}

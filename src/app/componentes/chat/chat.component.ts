@@ -14,6 +14,7 @@ export class ChatComponent implements OnInit {
 
   nuevoMensaje:string = "";
   usuarioLogueado:string;
+  nicknameLogueado: string;
 
   constructor(private firestoreApp: ChatFirebaseService) {
     firestoreApp.traerColeccion().subscribe(t=>
@@ -22,7 +23,7 @@ export class ChatComponent implements OnInit {
         (<Array<any>>t).forEach(element =>
           this.mensaje.push(element)
         )
-        console.log("mensaje: ", this.mensaje);
+        console.log("Mensaje: ", this.mensaje);
       }
     );
   }
@@ -33,10 +34,11 @@ export class ChatComponent implements OnInit {
 
     let datosUsuario = JSON.parse(localStorage.getItem('usuarioChat'));
     this.mensajeChat.usuario = datosUsuario[0]['usu_email'];
+    this.mensajeChat.nickname = datosUsuario[0]['usu_nickname'];
     this.mensajeChat.fecha = new Date;
     this.mensajeChat.texto = this.nuevoMensaje;
 
-    console.log("mensaje enviado: ", this.mensajeChat);
+    console.log("Mensaje Enviado: ", this.mensajeChat);
 
     this.firestoreApp.setMensaje(JSON.parse(JSON.stringify(this.mensajeChat)));
 
@@ -62,8 +64,9 @@ export class ChatComponent implements OnInit {
     if(localStorage.getItem('usuarioChat') !== null){
       let datosUsuario = JSON.parse(localStorage.getItem('usuarioChat'));
       this.usuarioLogueado = datosUsuario[0]['usu_email'];
+      //this.nicknameLogueado = datosUsuario[0]['usu_nickname'];
 
-      console.log("mail logueado chat: ", this.usuarioLogueado);
+      console.log("Usuario logueado chat: ", this.usuarioLogueado);
     }
   
   }

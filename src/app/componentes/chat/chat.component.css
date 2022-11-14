@@ -323,6 +323,7 @@ button, input, optgroup, select, textarea {
     text-align: left;
     margin-right: 20px;
     margin-bottom: 4px;
+    margin-top: 4px;
 }
 
 .recibido{
@@ -335,6 +336,7 @@ button, input, optgroup, select, textarea {
     text-align: left;
     margin-left: 20px;
     margin-bottom: 4px;
+    margin-top: 4px;
 }
 
 .textoFecha{
@@ -367,4 +369,8 @@ button, input, optgroup, select, textarea {
 .btn-secondary{
     background-color: transparent;
     border-color: transparent;
+}
+
+.card-titulo{
+    color: #fbceb5;
 }

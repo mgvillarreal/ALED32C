@@ -21,6 +21,7 @@ import { PerfilComponent } from './componentes/perfil/perfil.component';
 
 import { AnimacionComponent } from './componentes/animacion/animacion.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FilterChatPipe } from './pipes/filter-chat.pipe';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PerfilComponent,
 
     AnimacionComponent,
+     FilterChatPipe,
   ],
   imports: [
     BrowserModule,

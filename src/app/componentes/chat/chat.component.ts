@@ -16,6 +16,8 @@ export class ChatComponent implements OnInit {
   usuarioLogueado:string;
   nicknameLogueado: string;
 
+  inputBuscadorFlag:number=0;
+
   constructor(private firestoreApp: ChatFirebaseService) {
     firestoreApp.traerColeccion().subscribe(t=>
       {
@@ -69,6 +71,15 @@ export class ChatComponent implements OnInit {
       console.log("Usuario logueado chat: ", this.usuarioLogueado);
     }
   
+  }
+
+  inputBuscador(){
+    if(this.inputBuscadorFlag == 0){
+      this.inputBuscadorFlag = 1
+    }
+    else{
+      this.inputBuscadorFlag = 0;
+    }
   }
 
   ngOnInit(): void {

@@ -347,3 +347,24 @@ button, input, optgroup, select, textarea {
     font-weight: bold;
     font-size: small;
 }
+
+.input-buscar{
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-radius: 0px;
+    font-size: 14px;
+    line-height: 1.5;
+    border-bottom-width: thin;
+    border-color: #ced4da;
+    color: #212529;
+    background-color: #fff;
+    background-clip: padding-box;
+    appearance: none;
+    transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-secondary{
+    background-color: transparent;
+    border-color: transparent;
+}

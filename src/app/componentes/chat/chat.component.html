@@ -10,7 +10,7 @@
                 <h4 class="card-title"><strong>Chat</strong></h4>
                 
                 <div>
-                  <input *ngIf="inputBuscadorFlag==1" type="text" class=" input-buscar" placeholder="Buscar">
+                  <input *ngIf="inputBuscadorFlag==1" type="text" name="filterMsj" class=" input-buscar" placeholder="Buscar" [(ngModel)]="filterMsj">
                   <span (click)="inputBuscador()">
                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-search" width="24" height="24" viewBox="0 0 24 24" stroke-width="2.5" stroke="#9e9e9e" fill="none" stroke-linecap="round" stroke-linejoin="round">
                       <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
@@ -30,7 +30,7 @@
   
               <div class="ps-container ps-theme-default ps-active-y" id="contenedorMensajes" style="overflow-y: scroll !important; height:400px !important;">
                 <div class="h-100">
-                  <div *ngFor="let item of mensaje; let i = index" class="p-2" 
+                  <div *ngFor="let item of mensaje | filterChat:filterMsj, let i = index" class="p-2" 
                   [ngClass]="(usuarioLogueado==mensaje[i]['usuario'])? 'enviado' : 'recibido' "
                   >
                     <div class="textoNickname">{{item.nickname}}:</div>

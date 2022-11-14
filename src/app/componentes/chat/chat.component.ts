@@ -18,6 +18,8 @@ export class ChatComponent implements OnInit {
 
   inputBuscadorFlag:number=0;
 
+  filterMsj = '';
+
   constructor(private firestoreApp: ChatFirebaseService) {
     firestoreApp.traerColeccion().subscribe(t=>
       {

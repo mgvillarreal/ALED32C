@@ -15,3 +15,11 @@
     outline:none;
     margin-right: 5px;
 }
+
+.navbar-light .navbar-toggler-icon{
+    background-image: none !important;
+}
+
+.navbar-light .navbar-toggler{
+    border-color: transparent;
+}

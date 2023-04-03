@@ -1,27 +1,33 @@
-# ALED3P2
+# Chat Desktop Version
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.3.0.
+<p align="left">
+   <img src="https://img.shields.io/badge/STATUS-DONE-green">
+</p>
 
-## Development server
+This project is a practice of carrying out a chat in its desktop version. It is a basic user registration and login system. The user uploads their profile data which can also be modified. On the other hand, it has the chat interface where the user can communicate with other users immediately.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The chat can comunicate with the [mobile version.](https://github.com/mgvillarreal/chatMobile)
 
-## Code scaffolding
+### Technologies Used
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Angular 13
+2. TypeScript
+3. HTML
+4. CSS
+5. Firebase as data base for the chat.
 
-## Build
+### Installation
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+1. Clone this repository on your local machine: `git clone https://github.com/mgvillarreal/ALED3P2.git`
 
-## Running unit tests
+2. Navigate to the project directory: `cd ALED3P2`
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+3. Install the project dependencies: `npm install`
 
-## Running end-to-end tests
+4. Start the development server: `ng serve`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Author
 
-## Further help
+I did this project for educational purposes as a final exam project.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+**María Gabriela Villarreal** [GitHub Profile](https://github.com/mgvillarreal)

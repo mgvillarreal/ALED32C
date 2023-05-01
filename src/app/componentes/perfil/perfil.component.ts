@@ -69,7 +69,7 @@ export class PerfilComponent implements OnInit {
   }
 
   calculaEdad(){
-    let nacimientoDate = new Date(this.datosUsuario[0]['usu_fnacimiento']);
+    let nacimientoDate = new Date(this.datosUsuario[0].usu_fnacimiento);
     let timeDiff = Math.abs(Date.now() - nacimientoDate.getTime());
     this.miUsuario.edad = Math.floor((timeDiff / (1000 * 3600 * 24))/365);
   }

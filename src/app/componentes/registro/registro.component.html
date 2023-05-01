@@ -1,0 +1,77 @@
+<div class="contenedor">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Registro</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+
+                        <div *ngIf="parteForm==0">
+
+                            <form [formGroup]="forma" class="signin-form">
+
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" placeholder="Correo electrónico" required formControlName="email">
+                                </div>
+                                <div class="form-group">
+                                    <input id="password-field" type="password" class="form-control" placeholder="Contraseña" required formControlName="contrasena">
+                                    <span toggle="#password-field"></span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn submit px-3" (click)="registrarConEmailyContrasena()">Registrar</button>
+                                </div>
+                            
+                            </form>
+    
+                            <p class="w-100 text-center">&mdash; O regístrate con &mdash;</p>
+    
+                            <div class="text-center">
+                                <button href="#" class="px-2 py-2 mr-md-1 btn text-center" (click)="registrarConGoogle()">
+                                    <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png" width="30" height="30">
+                                    
+                                </button>
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <span> Ya tienes una cuenta? </span>
+                                <a routerLink="/ingreso"> Ingresa acá </a>
+                            </div>
+
+                        </div>
+
+                        <div *ngIf="parteForm==1">
+
+                            <h3 class="mb-4 text-center">Ingresa tus datos</h3>
+
+                            <form [formGroup]="forma" class="signin-form">
+
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nombre" required formControlName="nombre">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Apellido" required formControlName="apellido">
+                                </div>
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Nickname" required formControlName="nickname">
+                                </div>
+                                <div class="form-group">
+                                    <input type="date" class="form-control" placeholder="Fecha de nacimiento" required formControlName="fnacimiento">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn submit px-3" (click)="guardaUsuario()">Guardar</button>
+                                </div>
+                            
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,14 @@
+{
+  "projects": {
+    "default": "aled3p2"
+  },
+  "targets": {
+    "aled3p2": {
+      "hosting": {
+        "ALED3P2": [
+          "aled3p2"
+        ]
+      }
+    }
+  }
+}

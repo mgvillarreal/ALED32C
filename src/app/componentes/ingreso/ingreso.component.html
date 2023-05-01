@@ -1,0 +1,51 @@
+<div class="contenedor">
+    <section class="ftco-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-5">
+                    <h2 class="heading-section">Ingreso</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+
+                        <div>
+
+                            <form [formGroup]="forma" class="signin-form">
+
+                                <div class="form-group">
+                                    <input type="text" name="email" class="form-control" placeholder="Correo electrónico" required formControlName="email">
+                                </div>
+                                <div class="form-group">
+                                    <input id="password-field" type="password" class="form-control" placeholder="Contraseña" required formControlName="contrasena">
+                                    <span toggle="#password-field"></span>
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn submit px-3" (click)="ingresarConEmailyContrasena()">Ingresar</button>
+                                </div>
+                            
+                            </form>
+    
+                            <p class="w-100 text-center">&mdash; O ingresa con &mdash;</p>
+    
+                            <div class="text-center">
+                                <button class="px-2 py-2 mr-md-1 btn text-center">
+                                    <img src="https://www.freepnglogos.com/uploads/google-logo-png/google-logo-png-google-icon-logo-png-transparent-svg-vector-bie-supply-14.png" width="30" height="30">
+                                </button>
+                            </div>
+
+                            <div class="text-center mt-3">
+                                <span> No tienes una cuenta? </span>
+                                <a routerLink="/registro"> Ingresa acá </a>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+

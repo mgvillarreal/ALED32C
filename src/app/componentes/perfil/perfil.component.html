@@ -1,0 +1,111 @@
+<div class="contenedor" *ngIf="muestraPerfilFlag==1">
+    <div>
+        <div class="titulo-perfil text-center"> Perfil </div>
+
+        <div class="card mx-auto text-center">
+            <div>
+                <span class="nombre-usuario">{{datosUsuario[0]['usu_nombre']}}</span>
+            </div>
+
+            <div class="grid-campos">
+                <div>
+                    <span class="titulo-campos">Nombre</span><br>
+                    <span>{{datosUsuario[0]['usu_nombre']}}</span>
+                </div>
+                <div>
+                    <span class="titulo-campos">Apellido</span><br>
+                    <span>{{datosUsuario[0]['usu_apellido']}}</span>
+                </div>
+                <div>
+                    <span class="titulo-campos">Nickname</span><br>
+                    <span>{{datosUsuario[0]['usu_nickname']}}</span>
+                </div>
+                <div>
+                    <span class="titulo-campos">Edad</span><br>
+                    <span>{{miUsuario.edad}}</span>
+                </div>
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-outline-primary mt-4" (click)="editaDatos()">Editar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contenedor2" *ngIf="formularioPerfilFlag==1">
+    <div class="ftco-section" >
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-6 text-center mb-4">
+                    <h2 class="heading-section titulo-perfil">Editar Perfil</h2>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-md-6 col-lg-4">
+                    <div class="login-wrap p-0">
+
+                        <div>
+
+                            <form [formGroup]="forma" class="signin-form">
+
+                                <div class="form-group">
+                                    <label class="txt-label">Nombre</label>
+                                    <input type="text" name="nombre" class="form-control" required formControlName="nombre" [ngModel]="datosUsuario[0]['usu_nombre']">
+                                </div>
+                                <div class="form-group">
+                                    <label class="txt-label">Apellido</label>
+                                    <input type="text" name="apellido" class="form-control" required formControlName="apellido" [ngModel]="datosUsuario[0]['usu_apellido']">
+                                </div>
+                                <div class="form-group">
+                                    <label class="txt-label">Nickname</label>
+                                    <input type="text" name="nickname" class="form-control" required formControlName="nickname" [ngModel]="datosUsuario[0]['usu_nickname']">
+                                </div>
+                                <div class="form-group">
+                                    <label class="txt-label">Fecha de Nacimiento</label>
+                                    <input type="date" name="fnacimiento" class="form-control" required formControlName="fnacimiento" [ngModel]="datosUsuario[0]['usu_fnacimiento']">
+                                </div>
+                                <div class="form-group">
+                                    <label class="txt-label">Email</label>
+                                    <input type="text" name="email" class="form-control text-gris" required readonly formControlName="email" [ngModel]="datosUsuario[0]['usu_email']">
+                                </div>
+                                <div class="form-group">
+                                    <button type="submit" class="form-control btn submit px-3 mt-2" (click)="guardarDatos()" routerLink="/perfil">Guardar</button>
+                                </div>
+                            
+                            </form>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="contenedor3" *ngIf="mensajeActFlag==1">
+    <div>
+        <div class="titulo-perfil text-center"> Perfil </div>
+
+        <div class="card mx-auto text-center">
+            
+            <div>
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-circle-check" width="76" height="76" viewBox="0 0 24 24" stroke-width="1.5" stroke="#fbceb5" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"/>
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M9 12l2 2l4 -4" />
+                </svg>
+            </div>
+
+            <div class="txt-msj">
+                Tus datos han sido actualizados correctamente.
+            </div>
+
+            <div>
+                <button type="button" class="btn btn-outline-primary mt-4" (click)="vuelveaPerfil()">Aceptar</button>
+            </div>
+
+        </div>
+    </div>
+</div>
